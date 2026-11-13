@@ -1,6 +1,6 @@
 # SOCKS5 client in a tiny [Docker image](https://hub.docker.com/r/adkix/socks5-client) based on Alpine Linux.
 
-### It uses [sing-box](https://github.com/xjasonlyu/sing-box).
+### It uses [sing-box](https://github.com/SagerNet/sing-box).
 
 Supported protocols:
 - SOCKS5 with UDP-over-TCP support
@@ -38,7 +38,7 @@ Creating a container and a network interface for it, providing internet access, 
 /container/envs add key=USER value="<user>" list=socks5-client
 /container/envs add key=PASSWORD value="<password>" list=socks5-client
 /container/config set registry-url=registry-1.docker.io
-/container add remote-image=adkix/socks5-client root-dir=socks5-client/ tmpfs=/tmp:64M:0777 interface=veth1 envlist=socks5-client start-on-boot=yes
+/container add remote-image=adkix/socks5-client root-dir=socks5-client/ tmpfs=/tmp:128M:0777 interface=veth1 envlist=socks5-client start-on-boot=yes
 /container start 0
 ```
 
